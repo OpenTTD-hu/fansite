@@ -1,0 +1,14 @@
+.footer__container {
+  margin: auto;
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
+  border: 2px solid black;
+  background-color: white;
+}
+
+.footer__content {
+  margin: 0;
+}
