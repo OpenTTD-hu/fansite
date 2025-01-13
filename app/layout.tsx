@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import styles from "@/styles/global.module.css";
 
+import { UserProvider } from "@auth0/nextjs-auth0/client";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
 
@@ -38,24 +39,26 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <Header />
-        <div className={styles.container}>
-          <div className={styles.container__left}>
-            <div className={styles.container__top}>{top}</div>
+      <UserProvider>
+        <body className={`${geistSans.variable} ${geistMono.variable}`}>
+          <Header />
+          <div className={styles.container}>
+            <div className={styles.container__left}>
+              <div className={styles.container__top}>{top}</div>
+            </div>
+            <div className={styles.container__main}>
+              <div className={styles.container__basic}>{basic}</div>
+              <div className={styles.container__content}>{content}</div>
+            </div>
+            <div className={styles.container__right}>
+              <div className={styles.container__nav}>{nav}</div>
+              <div className={styles.container__auth}>{authn}</div>
+              <div className={styles.container__message}>{message}</div>
+            </div>
           </div>
-          <div className={styles.container__main}>
-            <div className={styles.container__basic}>{basic}</div>
-            <div className={styles.container__content}>{content}</div>
-          </div>
-          <div className={styles.container__right}>
-            <div className={styles.container__nav}>{nav}</div>
-            <div className={styles.container__auth}>{authn}</div>
-            <div className={styles.container__message}>{message}</div>
-          </div>
-        </div>
-        <Footer />
-      </body>
+          <Footer />
+        </body>
+      </UserProvider>
     </html>
   );
 }
