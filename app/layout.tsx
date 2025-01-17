@@ -4,6 +4,7 @@ import "./globals.css";
 import styles from "@/styles/global.module.css";
 
 import { UserProvider } from "@auth0/nextjs-auth0/client";
+import { ToastContainer, Bounce } from "react-toastify";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
 
@@ -57,6 +58,19 @@ export default function RootLayout({
             </div>
           </div>
           <Footer />
+          <ToastContainer
+            position="bottom-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={true}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+            transition={Bounce}
+          />
         </body>
       </UserProvider>
     </html>
