@@ -5,3 +5,12 @@
 3. WYSIWYG with Lexical or TipTap
 4. Database CRUD with Prisma
 5. Discord Widget
+
+## Notes
+
+Oldalsó sávokba ami szóba jöhet: 
+Navigáció
+Kapcsolatok (face discord)
+Bejelentkezés
+Képek random
+Üzenőfal, ha discordot tudja
